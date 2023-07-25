@@ -6,7 +6,7 @@ const StudentEditList = () => {
   const { id } = useParams()
   
   const { students,setStudents } = useUserContext()
-  const edit = students.find((item) => item.id == id)
+  const edit = students.find((item) => item.id === Number(id))
 
   let refresh=useNavigate()
 
@@ -19,7 +19,7 @@ const StudentEditList = () => {
     const mobileNo = e.target.elements.mobileNo.value
 
     const updatedStudent = students.map((student) =>
-      student.id == id ? { ...student, id:id,name:name,email:email,mobileNo:mobileNo } : student
+      student.id === Number(id) ? { ...student, id:id,name:name,email:email,mobileNo:mobileNo } : student
     )
     
     setStudents(updatedStudent);
