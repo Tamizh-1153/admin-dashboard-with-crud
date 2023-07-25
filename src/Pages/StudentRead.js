@@ -8,7 +8,7 @@ const StudentRead = () => {
 
     const {students}=useUserContext()
 
-    const read=students.find((item)=>item.id==Number(id))
+    const read=students.find((item)=>item.id===Number(id))
   return (
     <div
       style={{ height: "60dvh" }}
